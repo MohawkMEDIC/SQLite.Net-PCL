@@ -35,7 +35,8 @@ namespace SQLite.Net
         public SQLiteConnectionString(string databasePath, bool storeDateTimeAsTicks,
             IBlobSerializer serializer = null,
             IContractResolver resolver = null,
-            SQLiteOpenFlags? openFlags = null)
+            SQLiteOpenFlags? openFlags = null,
+            byte[] encryptionKey = null)
         {
             ConnectionString = databasePath;
             StoreDateTimeAsTicks = storeDateTimeAsTicks;
@@ -44,6 +45,7 @@ namespace SQLite.Net
             Serializer = serializer;
             Resolver = resolver ?? ContractResolver.Current;
             OpenFlags = openFlags ?? SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create;
+            EncryptionKey = encryptionKey;
         }
 
         [PublicAPI]
@@ -62,6 +64,11 @@ namespace SQLite.Net
         public IContractResolver Resolver { get; private set; }
 
         [PublicAPI]
-        public SQLiteOpenFlags OpenFlags {get; private set; } 
+        public SQLiteOpenFlags OpenFlags {get; private set; }
+
+        /// <summary>
+        /// Gets or sets the encryption key
+        /// </summary>
+        public byte[] EncryptionKey { get; private set; }
     }
 }

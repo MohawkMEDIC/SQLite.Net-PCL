@@ -141,7 +141,7 @@ namespace SQLite.Net
         [PublicAPI]
         public SQLiteConnection([JetBrains.Annotations.NotNull] ISQLitePlatform sqlitePlatform, string databasePath, SQLiteOpenFlags openFlags,
             bool storeDateTimeAsTicks = true, [CanBeNull] IBlobSerializer serializer = null, [CanBeNull] IDictionary<string, TableMapping> tableMappings = null,
-            [CanBeNull] IDictionary<Type, string> extraTypeMappings = null, IContractResolver resolver = null)
+            [CanBeNull] IDictionary<Type, string> extraTypeMappings = null, IContractResolver resolver = null, byte[] key = null)
         {
             if (sqlitePlatform == null)
             {
@@ -164,7 +164,7 @@ namespace SQLite.Net
 
             IDbHandle handle;
             var databasePathAsBytes = GetNullTerminatedUtf8(DatabasePath);
-            var r = Platform.SQLiteApi.Open(databasePathAsBytes, out handle, (int) openFlags, IntPtr.Zero);
+            var r = Platform.SQLiteApi.Open(databasePathAsBytes, out handle, (int) openFlags, IntPtr.Zero, key);
 
             Handle = handle;
             if (r != Result.OK)

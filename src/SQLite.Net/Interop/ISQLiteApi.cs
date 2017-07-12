@@ -29,6 +29,7 @@ namespace SQLite.Net.Interop
     {
         Result Open(byte[] filename, out IDbHandle db, int flags, IntPtr zvfs);
         //        Result Open16(string filename, out IDbHandle db);
+        Result Open(byte[] filename, out IDbHandle db, int flags, IntPtr zvfs, byte[] key);
 
         ExtendedResult ExtendedErrCode(IDbHandle db);
         int LibVersionNumber();
