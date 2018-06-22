@@ -12,6 +12,11 @@ namespace SQLite.Net.Platform.Win32
                 SQLiteApiWin32InternalConfiguration.NativeInteropSearchPath = nativeInteropSearchPath;
         }
 
+        public Result Open(byte[] filename, out IDbHandle db, int flags, IntPtr zvfs, byte[] key)
+        {
+            return this.Open(filename, out db, flags, zvfs);
+        }
+
         public Result Open(byte[] filename, out IDbHandle db, int flags, IntPtr zvfs)
         {
             IntPtr dbPtr;

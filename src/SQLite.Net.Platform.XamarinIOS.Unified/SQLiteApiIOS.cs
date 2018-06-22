@@ -14,6 +14,11 @@ namespace SQLite.Net.Platform.XamarinIOS
             return r;
         }
 
+        public Result Open(byte[] filename, out IDbHandle db, int flags, IntPtr zvfs, byte[] key)
+        {
+            return this.Open(filename, out db, flags, zvfs);
+        }
+
         public ExtendedResult ExtendedErrCode(IDbHandle db)
         {
             var internalDbHandle = (DbHandle) db;
