@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SQLite.Net-PCL.SQLCipher</id>
+        <version>3.1.1</version>
+        <title>SQLite.Net PCL SQLCipher Bindings (MEDIC Fork)</title>
+        <authors>Øystein Krog,Frank Krueger,Tim Heuer, Mohawk College of Applied Arts and Technology</authors>
+        <owners>Øystein Krog</owners>
+        <licenseUrl>https://raw.github.com/oysteinkrog/SQLite.Net-PCL/master/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/MohawkMEDIC/SQLite.Net-PCL</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This is a fork of the original SQLite-PCL library which includes support for SQLCipher. Please note you will need to procure a copy of SQLCipher.dll (compile from source) for this to work</description>
+        <releaseNotes>https://github.com/oysteinkrog/SQLite.Net-PCL/commits</releaseNotes>
+        <tags>sqlite pcl sql database ios android windows metro winrt xamarin monotouch monodroid win32 windowsphone wp wp8 wp8.1 sqlcipher</tags>
+        <dependencies>
+            <group>
+		        <dependency id="SQLite.Net.Core-PCL.MEDIC" version="3.1.1"/>
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+		<!-- Cipher -->
+        <file src="SQLite.Net.Platform.SqlCipher\SQLite.Net.Platform.SqlCipher.dll" target="lib\net40\SQLite.Net.Platform.SqlCipher.dll"/>
+    </files>
+</package>
