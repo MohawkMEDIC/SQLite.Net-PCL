@@ -8,6 +8,9 @@ copy /y ..\src\SQLite.Net.Async\bin\Release\SQLite.Net.Async.dll SQLite.Net.Asyn
 mkdir SQLite.Net.Platform.Generic
 copy /y ..\src\SQLite.Net.Platform.Generic\bin\Release\SQLite.Net.Platform.Generic.dll SQLite.Net.Platform.Generic
 
+mkdir SQLite.Net.Platform.SqlCipher
+copy /y ..\src\SQLite.Net.Platform.SqlCipher\bin\Release\SQLite.Net.Platform.SqlCipher.dll SQLite.Net.Platform.SqlCipher
+
 mkdir SQLite.Net.Platform.Win32
 copy /y ..\src\SQLite.Net.Platform.Win32\bin\Release\SQLite.Net.Platform.Win32.dll SQLite.Net.Platform.Win32
 
